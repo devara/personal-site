@@ -19,12 +19,12 @@ export default {
       { property: 'og:site_name', content: 'Devara Eko - Web Developer' },
       { property: 'og:title', content: 'Devara Eko - Web Developer' },
       { property: 'og:description', content: "Hi! I'm a web developer based in Yogyakarta, Indonesia. My passion and focus is backend development. But, I also love to create a beautiful and responsive website." },
-      { property: 'og:image', content: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/devaraeko.png' },
+      { property: 'og:image', content: 'https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/devara-eko.jpg' },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'https://devaraeko.com/' },
       { property: 'twitter:title', content: 'Devara Eko - Web Developer' },
       { property: 'twitter:description', content: "Hi! I'm a web developer based in Yogyakarta, Indonesia. My passion and focus is backend development. But, I also love to create a beautiful and responsive website." },
-      { property: 'twitter:image', content: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/devaraeko.png' },
+      { property: 'twitter:image', content: 'https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/devara-eko.jpg' },
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Devara Eko - Web Developer' }
     ],
     link: [

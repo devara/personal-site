@@ -2,7 +2,7 @@
   <div>
     <v-parallax
       height="650"
-      src="http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/hero-bg.jpg"
+      src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/hero-bg.jpg"
     >
       <v-row
         align="center"
