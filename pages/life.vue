@@ -14,77 +14,106 @@
         </v-col>
       </v-row>
     </v-parallax>
-    <v-container>
-      <v-row align="center">
-    <v-item-group
-      v-model="window"
-      class="shrink mr-6"
-      mandatory
-      tag="v-flex"
-    >
-      <v-item
-        v-for="n in length"
-        :key="n"
-        v-slot:default="{ active, toggle }"
-      >
-        <div>
-          <v-btn
-            :input-value="active"
-            icon
-            @click="toggle"
-          >
-            <v-icon>mdi-record</v-icon>
-          </v-btn>
-        </div>
-      </v-item>
-    </v-item-group>
-
-    <v-col>
-      <v-window
-        v-model="window"
-        class="elevation-1"
-        vertical
-      >
-        <v-window-item
-          v-for="n in length"
-          :key="n"
+    <v-item-group v-model="window" mandatory>
+      <v-container>
+        <v-row
+          align="center"
+          justify="center"
         >
-          <v-card flat>
-            <v-card-text>
-              <v-row class="mb-4" align="center">
-                <v-avatar color="grey" class="mr-4"></v-avatar>
-                <strong class="title">Title {{ n }}</strong>
-                <v-spacer></v-spacer>
-                <v-btn icon>
-                  <v-icon>mdi-account</v-icon>
-                </v-btn>
-              </v-row>
+          <v-col
+            v-for="(life, n) in length"
+            :key="n"
+            cols="3"
+          >
+            <v-item v-slot:default="{ active, toggle }">
+              <v-card
+                :hover="true"
+                class="d-flex align-center"
+                height="200"
+                @click="toggle"
+                :color="active ? life.color + ' ' + life.color_variant : ''"
+              >
+                <v-icon :color="active ? 'white' : life.color + ' ' + life.color_variant" class="display-2 flex-grow-1 text-center">mdi-{{ life.icon }}</v-icon>
+              </v-card>
+            </v-item>
+          </v-col>
+        </v-row>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+      </v-container>
+    </v-item-group>
+    <v-container>
+      <v-row align="center" justify="center">
+        <v-col cols="9">
+          <v-window
+            v-model="window"
+            class="elevation-2"
+          >
+            <v-window-item
+              v-for="(life, n) in length"
+              :key="n"
+            >
+              <v-card flat>
+                <v-card-text>
+                  <v-row class="mb-4" align="center">
+                    <v-avatar class="mr-4">
+                      <v-icon>mdi-{{ life.icon }}</v-icon>
+                    </v-avatar>
+                    <div :class="['display-2', life.color + '--text text--'+life.color_variant]">{{ life.name }}</div>
+                  </v-row>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
 
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </v-card-text>
-          </v-card>
-        </v-window-item>
-      </v-window>
-    </v-col>
-  </v-row>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+                </v-card-text>
+              </v-card>
+            </v-window-item>
+          </v-window>
+        </v-col>
+      </v-row>
     </v-container>
   </div>
 </template>
 <script>
   export default {
     data: () => ({
-      length: 3,
+      length: [
+        {
+          name: 'Loving my Pet',
+          icon: 'cat',
+          color: 'orange',
+          color_variant: 'darken-1'
+        },
+        {
+          name: 'Watching Netflix',
+          icon: 'netflix',
+          color: 'red',
+          color_variant: 'darken-3'
+        },
+        {
+          name: 'Playing video game',
+          icon: 'gamepad-variant',
+          color: 'light-blue',
+          color_variant: 'lighten-1'
+        },
+        {
+          name: 'Deepen my coding skill',
+          icon: 'file-code-outline',
+          color: 'pink',
+          color_variant: 'lighten-1'
+        }
+      ],
       window: 0,
     }),
+    head: {
+      title: 'About my Life'
+    }
   }
 </script>

@@ -96,6 +96,9 @@ export default {
         },
       ]
     }
+  },
+  head: {
+    title: 'My Experience'
   }
 }
 </script>
