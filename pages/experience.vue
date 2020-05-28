@@ -2,15 +2,15 @@
   <div>
     <v-parallax
       height="650"
-      src="http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/hero-bg.jpg"
+      :src="assets_url + 'images/hero-bg.jpg'"
     >
       <v-row
         align="center"
         justify="center"
       >
         <v-col class="text-center" cols="12">
-          <h2 class="hero-text">My experience.</h2>
-          <h3 class="subheading grey--text text--darken-3">never ending journey</h3>
+          <h1 class="hero-text">My experience.</h1>
+          <h3 class="subheading grey--text text--darken-1">never ending journey</h3>
         </v-col>
       </v-row>
     </v-parallax>
@@ -31,17 +31,19 @@
                 ></span>
               </template>
               <div class="py-4">
-                <h2 :class="`headline font-weight-light mb-4 ${year.color}--text`">{{ year.job }}</h2>
+                <h2 :class="`headline font-weight-bold mb-4 ${year.color}--text`">{{ year.job }}</h2>
                 <template
                   v-if="year.in_company"
                 >
                   <v-avatar>
-                    <img :src="year.company_logo">
+                    <img :src="assets_url+''+year.company_logo">
                   </v-avatar>
-                  <h4 class="font-weight-bold my-4">{{ year.company }}</h4>
+                  <h4 class="font-weight-bold my-4">
+                    <a class="company-link" :href="year.company_site" target="_blank">{{ year.company }}</a>
+                  </h4>
                 </template>
-                <div>
-                  Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+                <div class="grey--text text--darken-1">
+                  {{ year.job_desc }}
                 </div>
               </div>
             </v-timeline-item>
@@ -52,6 +54,8 @@
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
+
 export default {
   data() {
     return {
@@ -59,8 +63,9 @@ export default {
         {
           color: 'cyan',
           year: '2016 - present',
-          job: 'Frelance Developer',
-          in_company: false
+          job: 'Freelance Developer',
+          in_company: false,
+          job_desc: 'I’m currently still available for freelance work. If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.'
         },
         {
           color: 'green',
@@ -68,7 +73,9 @@ export default {
           job: 'Software Developer',
           in_company: true,
           company: 'Paperlust',
-          company_logo: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/company/paperlust.png'
+          company_logo: 'images/company/paperlust.png',
+          company_site: 'https://paperlust.co/',
+          job_desc: 'I work as a software developer at Paperlust, "Top Wedding and Event Stationery by Independent Creatives" based in Melbourne, Australia. But I work from Indonesia because Paperlust has an office in this country. Paperlust is the platform where print design lovers can find work they love from Australia’s best design talent.'
         },
         {
           color: 'pink',
@@ -76,29 +83,43 @@ export default {
           job: 'Software Developer',
           in_company: true,
           company: 'PT. Krafthaus Indonesia',
-          company_logo: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/company/krafthaus.png'
+          company_logo: 'images/company/krafthaus.png',
+          company_site: 'https://krafthaus.co.id/',
+          job_desc: 'My role at this company is a software developer. Krafthaus is Digital Agency based in Yogyakarta. Krafthaus have a wide array of services to offer their clients. But can generally boil all of their services down into one of these 3 general categories: Digital Strategy, Consultations and SEO; Web and Application Development; Designs and Branding.'
         },
         {
           color: 'amber',
           year: '2017 - 2018',
-          job: 'Web Aplication Developer',
+          job: 'Web Programmer',
           in_company: true,
           company: 'Universitas Proklamasi 45 Yogyakarta',
-          company_logo: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/company/up45.png'
+          company_logo: 'images/company/up45.png',
+          company_site: 'https://up45.ac.id/',
+          job_desc: 'I worked as a web programmer at this University for one year. I was asked to redesign the main website and make the CMS more powerful to be used by administrators. I also redesigned the new student admission system and made it integrated with affiliate systems designed by third-party vendors.'
         },
         {
-          color: 'brown',
+          color: 'red',
           year: '2016 - 2017',
           job: 'Web Developer',
           in_company: true,
           company: 'Penerbit Genesis',
-          company_logo: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/company/penerbit-genesis.png'
+          company_logo: 'images/company/penerbit-genesis.png',
+          company_site: 'https://penerbitgenesis.com/',
+          job_desc: 'Design, build and maintenance a company profile website along with its product catalog.'
         },
       ]
     }
   },
+  computed: mapState([
+    'assets_url'
+  ]),
   head: {
     title: 'My Experience'
   }
 }
 </script>
+<style scoped>
+.company-link {
+  text-decoration: none;
+}
+</style>

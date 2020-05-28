@@ -20,8 +20,8 @@
             height="140"
           >
             <v-img
-              :lazy-src="list.img"
-              :src="list.img"
+              :lazy-src="assets_url+''+list.img"
+              :src="assets_url+''+list.img"
               :contain="true"
               class="white--text"
               max-width="128px"
@@ -37,6 +37,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -46,27 +47,27 @@ export default {
           lists: [
             {
               name: 'CSS3',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/css3.png'
+              img: 'images/tech-icons/css3.png'
             },
             {
               name: 'HTML5',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/html5.png'
+              img: 'images/tech-icons/html5.png'
             },
             {
               name: 'Javascript',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/javascript.png'
+              img: 'images/tech-icons/javascript.png'
             },
             {
               name: 'ES6',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/es6.png'
+              img: 'images/tech-icons/es6.png'
             },
             {
               name: 'PHP',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/php.png'
+              img: 'images/tech-icons/php.png'
             },
             {
               name: 'Typescript',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/typescript.png'
+              img: 'images/tech-icons/typescript.png'
             }
           ]
         },
@@ -75,15 +76,15 @@ export default {
           lists: [
             {
               name: 'Babel',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/babel.png'
+              img: 'images/tech-icons/babel.png'
             },
             {
               name: 'Less',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/less.png'
+              img: 'images/tech-icons/less.png'
             },
             {
               name: 'Sass',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/sass.png'
+              img: 'images/tech-icons/sass.png'
             }
           ]
         },
@@ -92,19 +93,19 @@ export default {
           lists: [
             {
               name: 'Codeigniter',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/codeigniter.png'
+              img: 'images/tech-icons/codeigniter.png'
             },
             {
               name: 'Express',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/expressjs.png'
+              img: 'images/tech-icons/expressjs.png'
             },
             {
               name: 'Laravel',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/laravel.png'
+              img: 'images/tech-icons/laravel.png'
             },
             {
               name: 'Vue',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/vue.png'
+              img: 'images/tech-icons/vue.png'
             }
           ]
         },
@@ -113,31 +114,31 @@ export default {
           lists: [
             {
               name: 'Composer',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/composer.png'
+              img: 'images/tech-icons/composer.png'
             },
             {
               name: 'Docker',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/docker.png'
+              img: 'images/tech-icons/docker.png'
             },
             {
               name: 'Git',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/git.png'
+              img: 'images/tech-icons/git.png'
             },
             {
               name: 'Gulp',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/gulp.png'
+              img: 'images/tech-icons/gulp.png'
             },
             {
               name: 'Node',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/nodejs.png'
+              img: 'images/tech-icons/nodejs.png'
             },
             {
               name: 'VS Code',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/vsonline.png'
+              img: 'images/tech-icons/vsonline.png'
             },
             {
               name: 'Webpack',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/webpack.png'
+              img: 'images/tech-icons/webpack.png'
             }
           ]
         },
@@ -146,20 +147,23 @@ export default {
           lists: [
             {
               name: 'SQL',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/sql.png'
+              img: 'images/tech-icons/sql.png'
             },
             {
               name: 'PostgreSQL',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/postgresql.png'
+              img: 'images/tech-icons/postgresql.png'
             },
             {
               name: 'S3',
-              img: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/tech-icons/s3.png'
+              img: 'images/tech-icons/s3.png'
             }
           ]
         }
       ]
     }
-  }
+  },
+  computed: mapState([
+    'assets_url'
+  ])
 }
 </script>

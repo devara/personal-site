@@ -24,7 +24,8 @@ export default {
       { property: 'twitter:url', content: 'https://devaraeko.com/' },
       { property: 'twitter:title', content: 'Devara Eko - Web Developer' },
       { property: 'twitter:description', content: "Hi! I'm a web developer based in Yogyakarta, Indonesia. My passion and focus is backend development. But, I also love to create a beautiful and responsive website." },
-      { property: 'twitter:image', content: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/devaraeko.png' }
+      { property: 'twitter:image', content: 'http://deva.assets.s3-ap-southeast-1.amazonaws.com/images/devaraeko.png' },
+      { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Devara Eko - Web Developer' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -34,7 +35,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#A65301' },
+  loading: { color: '#b2dfdb' },
   /*
   ** Global CSS
   */

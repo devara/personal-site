@@ -2,12 +2,31 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
+      src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/bg/nav-slide-bg.jpg"
       :temporary="true"
       :mini-variant="miniVariant"
       :expand-on-hover="expandOnHover"
+      dark
       fixed
       app
     >
+      <v-list>
+        <v-list-item class="px-2">
+          <v-list-item-avatar size="75px">
+            <v-img src="https://s3.ap-southeast-1.amazonaws.com/deva.assets/images/build-rider.png"></v-img>
+          </v-list-item-avatar>
+        </v-list-item>
+
+        <v-list-item link>
+          <v-list-item-content>
+            <v-list-item-title class="title">Devara Eko</v-list-item-title>
+            <v-list-item-subtitle>devaraekokm@gmail.com</v-list-item-subtitle>
+          </v-list-item-content>
+        </v-list-item>
+      </v-list>
+
+      <v-divider></v-divider>
+
       <v-list>
         <v-list-item
           v-for="(item, i) in items"
@@ -28,6 +47,7 @@
     <v-app-bar
       elevate-on-scroll
       color="teal lighten-4"
+      height="80px"
       :clipped-left="clipped"
       :hide-on-scroll="true"
       :light="true"
@@ -39,41 +59,45 @@
         class="d-flex d-sm-none"
       />
       
-      <v-toolbar-title v-text="title"/>
+      <v-img
+        src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
+        max-width="70px"
+        class="ml-md-4 ml-lg-8"
+      ></v-img>
       <v-spacer />
       <v-btn
         text
-        color="brown darken-1"
+        color="teal darken-2"
         nuxt
         to="/"
-        class="d-none d-sm-flex"
+        class="d-none d-sm-flex font-weight-bold"
       >
         About
       </v-btn>
       <v-btn
         text
-        color="brown darken-1"
+        color="teal darken-1"
         nuxt
         to="/experience"
-        class="d-none d-sm-flex"
+        class="d-none d-sm-flex font-weight-bold"
       >
         Experience
       </v-btn>
       <v-btn
         text
-        color="brown darken-1"
+        color="teal darken-1"
         nuxt
-        to="/inspire"
-        class="d-none d-sm-flex"
+        to="/portofolio"
+        class="d-none d-sm-flex font-weight-bold"
       >
         Portofolio
       </v-btn>
       <v-btn
         text
-        color="brown darken-1"
+        color="teal darken-1"
         nuxt
         to="/life"
-        class="d-none d-sm-flex mr-5"
+        class="d-none d-sm-flex mr-5 font-weight-bold"
       >
         Life
       </v-btn>
@@ -128,14 +152,24 @@ export default {
       expandOnHover: false,
       items: [
         {
-          icon: 'mdi-apps',
-          title: 'Welcome',
+          icon: 'mdi-home-variant-outline',
+          title: 'Home',
           to: '/'
         },
         {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/inspire'
+          icon: 'mdi-briefcase-outline',
+          title: 'Experience',
+          to: '/experience'
+        },
+        {
+          icon: 'mdi-apps',
+          title: 'Portofolio',
+          to: '/portofolio'
+        },
+        {
+          icon: 'mdi-emoticon-cool-outline',
+          title: 'Life',
+          to: '/life'
         }
       ],
       miniVariant: false,
