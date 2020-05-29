@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-parallax
-      height="650"
+      :height="small_device ? '575' : '650'"
       :src="assets_url + 'images/hero-bg.jpg'"
     >
       <v-row
@@ -9,7 +9,7 @@
         justify="center"
       >
         <v-col class="text-center" cols="12">
-          <h1 class="hero-text">My experience.</h1>
+          <h1 :class="small_device ? 'hero-text-small' : 'hero-text'">Experience.</h1>
           <h3 class="subheading grey--text text--darken-1">never ending journey</h3>
         </v-col>
       </v-row>
@@ -17,7 +17,9 @@
     <v-container>
       <v-row>
         <v-col>
-          <v-timeline>
+          <v-timeline
+            :dense="small_device"
+          >
             <v-timeline-item
               v-for="(year, i) in years"
               :key="i"
@@ -31,6 +33,7 @@
                 ></span>
               </template>
               <div class="py-4">
+                <p v-if="small_device" :class="`${year.color}--text mb-1`">{{ year.year }}</p>
                 <h2 :class="`headline font-weight-bold mb-4 ${year.color}--text`">{{ year.job }}</h2>
                 <template
                   v-if="year.in_company"
@@ -38,7 +41,7 @@
                   <v-avatar>
                     <img :src="assets_url+''+year.company_logo">
                   </v-avatar>
-                  <h4 class="font-weight-bold my-4">
+                  <h4 class="font-weight-bold mt-1 mb-4">
                     <a class="company-link" :href="year.company_site" target="_blank">{{ year.company }}</a>
                   </h4>
                 </template>
@@ -110,9 +113,12 @@ export default {
       ]
     }
   },
-  computed: mapState([
-    'assets_url'
-  ]),
+  computed: {
+    ...mapState(['assets_url']),
+    small_device() {
+      return this.$vuetify.breakpoint.name == 'xs' ? true : false;
+    }
+  },
   head: {
     title: 'My Experience'
   }

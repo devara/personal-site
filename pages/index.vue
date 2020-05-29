@@ -1,7 +1,7 @@
 <template>
 <div>
   <v-parallax
-    height="650"
+    :height="small_device ? '575' : '650'"
     :src="assets_url + 'images/hero-bg.jpg'"
   >
     <v-row
@@ -138,54 +138,6 @@
       </v-col>
     </v-row>
   </v-container>
-  <!-- <v-speed-dial
-    v-model="fab"
-    :absolute="true"
-    :fixed="true"
-    :bottom="true"
-    :right="true"
-    :direction="'top'"
-    :transition="'slide-y-reverse-transition'"
-  >
-    <template v-slot:activator>
-      <v-btn
-        v-model="fab"
-        color="teal lighten-1"
-        dark
-        fab
-        fixed
-        right
-        bottom
-      >
-        <v-icon v-if="fab">mdi-close</v-icon>
-        <v-icon v-else>mdi-share</v-icon>
-      </v-btn>
-    </template>
-    <v-btn
-        fab
-        dark
-        small
-        color="green"
-      >
-        <v-icon>mdi-github</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        dark
-        small
-        color="indigo"
-      >
-        <v-icon>mdi-twitter</v-icon>
-      </v-btn>
-      <v-btn
-        fab
-        dark
-        small
-        color="red"
-      >
-        <v-icon>mdi-linkedin</v-icon>
-      </v-btn>
-  </v-speed-dial> -->
 </div>
 </template>
 
@@ -200,9 +152,12 @@ export default {
     Technologies,
     BreakSection
   },
-  computed: mapState([
-    'assets_url'
-  ]),
+  computed: {
+    ...mapState(['assets_url']),
+    small_device() {
+      return this.$vuetify.breakpoint.name == 'xs' ? true : false;
+    }
+  },
   data() {
     return {
       fab: false

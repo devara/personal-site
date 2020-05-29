@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-parallax
-      height="650"
+      :height="small_device ? '575' : '650'"
       :src="assets_url + 'images/hero-bg.jpg'"
     >
       <v-row
@@ -9,7 +9,7 @@
         justify="center"
       >
         <v-col class="text-center" cols="12">
-          <h1 class="hero-text">Portofolio.</h1>
+          <h1 :class="small_device ? 'hero-text-small' : 'hero-text'">Portofolio.</h1>
           <h3 class="subheading grey--text text--darken-1">let me write the codes</h3>
         </v-col>
       </v-row>
@@ -36,7 +36,7 @@
       :class="portofolio.color"
     >
       <v-row
-        class="pa-12"
+        :class="small_device ? 'pa-6' : 'pa-12'"
         align="center"
         justify="center"
       >
@@ -66,9 +66,12 @@
 <script>
 import { mapState } from 'vuex'
 export default {
-  computed: mapState([
-    'assets_url'
-  ]),
+  computed: {
+    ...mapState(['assets_url']),
+    small_device() {
+      return this.$vuetify.breakpoint.name == 'xs' ? true : false;
+    }
+  },
   head: {
     title: 'Portofolio'
   },

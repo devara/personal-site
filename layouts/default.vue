@@ -207,4 +207,10 @@ export default {
   font-weight: lighter;
   color: #F4A0A0;
 }
+.hero-text-small {
+  font-family: 'Pacifico', 'cursive';
+  font-size: 3rem;
+  font-weight: lighter;
+  color: #F4A0A0;
+}
 </style>
