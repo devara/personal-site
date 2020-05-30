@@ -2,7 +2,7 @@
   <div>
     <v-parallax
       :height="small_device ? '575' : '650'"
-      :src="assets_url + 'images/hero-bg.jpg'"
+      :src="assets_url + 'images/bg/hero-bg-parallax.jpg'"
     >
       <v-row
         align="center"
@@ -70,7 +70,7 @@
                     v-for="(story, n) in life.stories"
                     :key="n"
                   >
-                    <p class="font-weight-medium">{{ story.paragraph }}</p>
+                    <p class="body-1 font-weight-medium">{{ story.paragraph }}</p>
                   </div>
                 </v-card-text>
               </v-card>

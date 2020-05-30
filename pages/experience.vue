@@ -2,7 +2,7 @@
   <div>
     <v-parallax
       :height="small_device ? '575' : '650'"
-      :src="assets_url + 'images/hero-bg.jpg'"
+      :src="assets_url + 'images/bg/hero-bg-parallax.jpg'"
     >
       <v-row
         align="center"

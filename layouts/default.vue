@@ -3,9 +3,8 @@
     <v-navigation-drawer
       v-model="drawer"
       src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/bg/nav-slide-bg.jpg"
+      :right="true"
       :temporary="true"
-      :mini-variant="miniVariant"
-      :expand-on-hover="expandOnHover"
       dark
       fixed
       app
@@ -47,24 +46,48 @@
     <v-app-bar
       elevate-on-scroll
       color="teal lighten-4"
-      height="80px"
-      :clipped-left="clipped"
+      height="90px"
       :hide-on-scroll="true"
       :light="true"
       fixed
       app
     >
-      <v-app-bar-nav-icon
-        @click.stop="drawer = !drawer"
-        class="d-flex d-sm-none"
-      />
-      
-      <v-img
-        src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
-        max-width="70px"
-        class="ml-md-4 ml-lg-8"
-      ></v-img>
-      <v-spacer />
+      <v-row class="d-sm-none">
+        <v-col cols="2">
+          <v-app-bar-nav-icon
+            @click.stop="drawer = !drawer"
+            color="teal"
+          />
+        </v-col>
+        <v-col class="d-flex justify-space-around">
+          <v-btn
+            nuxt
+            to="/"
+            icon
+          >
+            <v-img
+              src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
+              max-width="75px"
+            ></v-img>
+          </v-btn>
+        </v-col>
+        <v-col cols="2" class="d-flex justify-end">
+          
+        </v-col>
+      </v-row>
+
+      <v-btn
+        nuxt
+        to="/"
+        icon
+        class="ml-6 ml-sm-4 ml-md-4 ml-lg-8 d-none d-sm-flex"
+      >
+        <v-img
+          src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
+          max-width="75px"
+        ></v-img>
+      </v-btn>
+      <v-spacer class="d-none d-sm-flex" />
       <v-btn
         text
         color="teal darken-2"
@@ -72,7 +95,7 @@
         to="/"
         class="d-none d-sm-flex font-weight-bold"
       >
-        About
+        Home
       </v-btn>
       <v-btn
         text
@@ -146,10 +169,8 @@
 export default {
   data () {
     return {
-      clipped: false,
       drawer: false,
       fixed: false,
-      expandOnHover: false,
       items: [
         {
           icon: 'mdi-home-variant-outline',
@@ -172,7 +193,6 @@ export default {
           to: '/life'
         }
       ],
-      miniVariant: false,
       title: 'Dev World',
       icons: [
         {
