@@ -2,7 +2,7 @@
   <v-app>
     <v-navigation-drawer
       v-model="drawer"
-      src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/bg/nav-slide-bg.jpg"
+      src="https://d1xbgu4d2e3yf7.cloudfront.net/images/bg/nav-slide-bg.jpg"
       :right="true"
       :temporary="true"
       dark
@@ -12,7 +12,7 @@
       <v-list>
         <v-list-item class="px-2">
           <v-list-item-avatar size="75px">
-            <v-img src="https://s3.ap-southeast-1.amazonaws.com/deva.assets/images/build-rider.png"></v-img>
+            <v-img src="https://d1xbgu4d2e3yf7.cloudfront.net/images/build-rider.png"></v-img>
           </v-list-item-avatar>
         </v-list-item>
 
@@ -66,7 +66,7 @@
             icon
           >
             <v-img
-              src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
+              src="https://d1xbgu4d2e3yf7.cloudfront.net/images/dev-logo.png"
               max-width="75px"
             ></v-img>
           </v-btn>
@@ -83,7 +83,7 @@
         class="ml-6 ml-sm-4 ml-md-4 ml-lg-8 d-none d-sm-flex"
       >
         <v-img
-          src="https://s3-ap-southeast-1.amazonaws.com/deva.assets/images/dev-logo.png"
+          src="https://d1xbgu4d2e3yf7.cloudfront.net/images/dev-logo.png"
           max-width="75px"
         ></v-img>
       </v-btn>

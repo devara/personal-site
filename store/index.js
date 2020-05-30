@@ -1,3 +1,3 @@
 export const state = () => ({
-    assets_url: 'https://s3.ap-southeast-1.amazonaws.com/deva.assets/'
+    assets_url: 'https://d1xbgu4d2e3yf7.cloudfront.net/'
 })
