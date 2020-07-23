@@ -72,6 +72,14 @@ export default {
             {
               name: 'Node',
               img: 'images/tech-icons/nodejs.png'
+            },
+            {
+              name: 'SQL',
+              img: 'images/tech-icons/sql.png'
+            },
+            {
+              name: 'GraphQL',
+              img: 'images/tech-icons/graphql.png'
             }
           ]
         },
@@ -110,6 +118,10 @@ export default {
             {
               name: 'Vue',
               img: 'images/tech-icons/vue.png'
+            },
+            {
+              name: 'Nuxt',
+              img: 'images/tech-icons/nuxt.png'
             }
           ]
         },
@@ -146,12 +158,12 @@ export default {
           category: 'Data and Storage',
           lists: [
             {
-              name: 'SQL',
-              img: 'images/tech-icons/sql.png'
-            },
-            {
               name: 'PostgreSQL',
               img: 'images/tech-icons/postgresql.png'
+            },
+            {
+              name: 'Redis',
+              img: 'images/tech-icons/redis.png'
             },
             {
               name: 'S3',

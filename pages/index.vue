@@ -35,7 +35,7 @@
           <div class="mt-8 mb-5">
             <div class="display-2 font-weight-medium teal--text text--lighten-2 mb-6">Hi.</div>
             <h2 class="brown--text text--lighten-2">My name is Devara Eko Katon Mahardika</h2>
-            <p class="grey--text text--darken-1">
+            <p class="grey--text text--darken-1 font-weight-medium">
               I'm a web developer based in Yogyakarta, Indonesia. <br>
               My passion and focus is backend development.<br>
               But, I also love to create a beautiful and responsive website.
@@ -68,7 +68,7 @@
             </div>
           </v-col>
           <v-col cols="12" md="6" sm="12">
-            <div class="headline teal--text text--lighten-2 mb-6">Develop what you need.</div>
+            <div class="headline font-weight-medium teal--text text--lighten-2 mb-6">Develop what you need.</div>
             <p class="grey--text text--darken-1">
               I'm a developer, so I know how to create your website to run across devices using the latest technologies available.
             </p>
@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="col-md-6 col-sm-12">
-            <div class="headline teal--text text--lighten-2 mb-6">Design what you want.</div>
+            <div class="headline font-weight-medium teal--text text--lighten-2 mb-6">Design what you want.</div>
             <p class="grey--text text--darken-1">
               I like to keep it simple. My goals are to focus on typography, content and conveying the message that you want to send.
             </p>
