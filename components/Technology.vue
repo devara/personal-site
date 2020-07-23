@@ -68,6 +68,10 @@ export default {
             {
               name: 'Typescript',
               img: 'images/tech-icons/typescript.png'
+            },
+            {
+              name: 'Node',
+              img: 'images/tech-icons/nodejs.png'
             }
           ]
         },
@@ -127,10 +131,6 @@ export default {
             {
               name: 'Gulp',
               img: 'images/tech-icons/gulp.png'
-            },
-            {
-              name: 'Node',
-              img: 'images/tech-icons/nodejs.png'
             },
             {
               name: 'VS Code',

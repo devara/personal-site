@@ -19,17 +19,16 @@ export default {
       { property: 'og:site_name', content: 'Devara Eko - Web Developer' },
       { property: 'og:title', content: 'Devara Eko - Web Developer' },
       { property: 'og:description', content: "Hi! I'm a web developer based in Yogyakarta, Indonesia. My passion and focus is backend development. But, I also love to create a beautiful and responsive website." },
-      { property: 'og:image', content: 'https://d1xbgu4d2e3yf7.cloudfront.net/images/devara-eko-site.jpg' },
+      { property: 'og:image', content: 'https://res.cloudinary.com/devaraeko/images/devara-eko-site.jpg' },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: 'https://devaraeko.com/' },
       { property: 'twitter:title', content: 'Devara Eko - Web Developer' },
       { property: 'twitter:description', content: "Hi! I'm a web developer based in Yogyakarta, Indonesia. My passion and focus is backend development. But, I also love to create a beautiful and responsive website." },
-      { property: 'twitter:image', content: 'https://d1xbgu4d2e3yf7.cloudfront.net/images/devara-eko-site.jpg' },
+      { property: 'twitter:image', content: 'https://res.cloudinary.com/devaraeko/images/devara-eko-site.jpg' },
       { hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Devara Eko - Web Developer' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&display=swap'}
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   /*
@@ -57,7 +56,28 @@ export default {
   */
   modules: [
     '@nuxtjs/pwa',
+    '@nuxtjs/sitemap',
+    'nuxt-webfontloader'
   ],
+  sitemap: [
+    {
+      hostname: 'https://devaraeko.com',
+      path: '/sitemap.xml'
+    }
+  ],
+  /*
+  ** Web Fonts Loaded
+  */
+  webfontloader: {
+    google: {
+      families: [
+        'Inconsolata:200,300,400,500,600,700'
+      ],
+      urls: [
+        'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700&display=swap'
+      ]
+    }
+  },
   /*
   ** vuetify module configuration
   ** https://github.com/nuxt-community/vuetify-module
@@ -84,10 +104,14 @@ export default {
   ** Build configuration
   */
   build: {
+    extractCSS: true,
     /*
     ** You can extend webpack config here
     */
     extend (config, ctx) {
+      if (ctx && ctx.isClient) {
+        config.optimization.splitChunks.maxSize = 25600
+      }
     }
   }
 }

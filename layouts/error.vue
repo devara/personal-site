@@ -8,7 +8,7 @@
         >
           <v-col cols="12" sm="10" md="10" lg="8">
             <v-img
-              src="http://deva.assets.s3-ap-southeast-1.amazonaws.com/gif/404.gif"
+              src="https://res.cloudinary.com/devaraeko/image/upload/gif/404.gif"
               :contain="true"
             >
             </v-img>

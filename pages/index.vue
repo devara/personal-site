@@ -10,7 +10,7 @@
     >
       <v-col class="text-center" cols="10" sm="7" md="5" lg="4">
         <v-img
-          :src="assets_url + 'images/call-me-dev.png'"
+          :src="assets_url + 'q_60/images/call-me-dev.png'"
           :contain="true"
         >
         </v-img>
@@ -28,7 +28,7 @@
         <div class="text-center">
           <v-avatar size="100">
             <img
-              :src="assets_url + 'images/build-rider.png'"
+              :src="assets_url + 'c_scale,w_150/images/build-rider.png'"
               alt="John"
             >
           </v-avatar>
@@ -62,7 +62,7 @@
           <v-col cols="12" md="4" sm="12" order-md="last">
             <div class="text-center">
               <v-img
-                :src="assets_url + 'images/web-development.png'"
+                :src="assets_url + 'q_60/images/web-development.png'"
               >
               </v-img>
             </div>
@@ -81,7 +81,7 @@
           <div class="col-md-4 col-sm-12">
             <div class="text-center">
               <v-img
-                :src="assets_url + 'images/web-design.png'"
+                :src="assets_url + 'q_60/images/web-design.png'"
               >
               </v-img>
             </div>

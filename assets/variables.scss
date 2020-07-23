@@ -5,8 +5,12 @@
 // @import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-$body-font-family: 'Laila';
-$heading-font-family: 'Laila';
+$font-family: 'Inconsolata', monospace !default;
+$body-font-family: 'Inconsolata', monospace !default;
+$heading-font-family: 'Inconsolata', monospace !default;
 $font-size-root: 18px;
+$font-weights: (
+  'thin': 200
+);
 $code-color: #A65301;
 @import '~vuetify/src/styles/styles.sass';

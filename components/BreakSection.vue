@@ -4,7 +4,7 @@
       <div class="text-center">
         <img
           class="break-line"
-          src="https://d1xbgu4d2e3yf7.cloudfront.net/images/break-line.png"
+          src="https://res.cloudinary.com/devaraeko/images/break-line.png"
         >
       </div>
     </v-col>
