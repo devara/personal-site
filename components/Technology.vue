@@ -14,22 +14,29 @@
           sm="4"
           md="2"
         >
-          <v-card
-            class="mx-auto mb-3 pa-2"
-            max-width="140"
-            height="140"
-          >
-            <v-img
-              :lazy-src="assets_url+''+list.img"
-              :src="assets_url+''+list.img"
-              :contain="true"
-              class="white--text"
-              max-width="128px"
-              max-height="128px"
-            >
+          <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+              <v-card
+                class="mx-auto mb-3 pa-2"
+                max-width="140"
+                height="140"
+                v-bind="attrs"
+                v-on="on"
+              >
+                <v-img
+                  :lazy-src="assets_url+''+list.img"
+                  :src="assets_url+''+list.img"
+                  :contain="true"
+                  class="white--text"
+                  max-width="128px"
+                  max-height="128px"
+                >
 
-            </v-img>
-          </v-card>
+                </v-img>
+              </v-card>
+            </template>
+            <span>{{ list.name }}</span>
+          </v-tooltip>
         </v-col>
       </v-row>
     </v-col>
@@ -168,6 +175,10 @@ export default {
             {
               name: 'S3',
               img: 'images/tech-icons/s3.png'
+            },
+            {
+              name: 'MongoDB',
+              img: 'images/tech-icons/mongodb.png'
             }
           ]
         }
