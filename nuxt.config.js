@@ -108,10 +108,10 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
-      if (ctx && ctx.isClient) {
-        config.optimization.splitChunks.maxSize = 25600
-      }
-    }
+    // extend (config, ctx) {
+    //   if (ctx && ctx.isClient) {
+    //     config.optimization.splitChunks.maxSize = 51200
+    //   }
+    // }
   }
 }
