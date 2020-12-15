@@ -62,6 +62,15 @@ export default {
     '@nuxtjs/sitemap',
     'nuxt-webfontloader'
   ],
+  pwa: {
+    manifest: {
+      name: 'Hi! My name is Devara Eko, a web developer',
+      short_name: 'Devara Eko'
+    },
+    meta: {
+      theme_color: '#AFDED4'
+    }
+  },
   sitemap: [
     {
       hostname: 'https://devaraeko.com',
