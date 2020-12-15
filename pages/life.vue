@@ -161,6 +161,7 @@ export default {
     window: 0,
   }),
   head: {
+    titleTemplate: '%s - ' + 'Devara Eko',
     title: 'About my Life'
   }
 }

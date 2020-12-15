@@ -120,6 +120,7 @@ export default {
     }
   },
   head: {
+    titleTemplate: '%s - ' + 'Devara Eko',
     title: 'My Experience'
   }
 }

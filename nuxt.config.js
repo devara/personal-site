@@ -1,7 +1,7 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  mode: 'universal',
+  ssr: true,
   /*
   ** Headers of the page
   */
@@ -50,6 +50,9 @@ export default {
   */
   buildModules: [
     '@nuxtjs/vuetify',
+    ['@nuxtjs/google-analytics', {
+      id: 'UA-75813593-2'
+    }]
   ],
   /*
   ** Nuxt.js modules
