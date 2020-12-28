@@ -74,7 +74,8 @@ export default {
   sitemap: [
     {
       hostname: 'https://devaraeko.com',
-      path: '/sitemap.xml'
+      path: '/sitemap.xml',
+      trailingSlash: true
     }
   ],
   /*

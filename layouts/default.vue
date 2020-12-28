@@ -101,7 +101,7 @@
         text
         color="teal darken-1"
         nuxt
-        to="/experience"
+        to="/experience/"
         class="d-none d-sm-flex title font-weight-bold"
       >
         Experience
@@ -110,7 +110,7 @@
         text
         color="teal darken-1"
         nuxt
-        to="/portofolio"
+        to="/portofolio/"
         class="d-none d-sm-flex title font-weight-bold"
       >
         Portofolio
@@ -119,7 +119,7 @@
         text
         color="teal darken-1"
         nuxt
-        to="/life"
+        to="/life/"
         class="d-none d-sm-flex title mr-5 font-weight-bold"
       >
         Life
@@ -180,17 +180,17 @@ export default {
         {
           icon: 'mdi-briefcase-outline',
           title: 'Experience',
-          to: '/experience'
+          to: '/experience/'
         },
         {
           icon: 'mdi-apps',
           title: 'Portofolio',
-          to: '/portofolio'
+          to: '/portofolio/'
         },
         {
           icon: 'mdi-emoticon-cool-outline',
           title: 'Life',
-          to: '/life'
+          to: '/life/'
         }
       ],
       title: 'Dev World',
